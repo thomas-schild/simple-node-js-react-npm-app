@@ -7,9 +7,9 @@ pipeline {
     }
     // the 'npm test' called via test.sh reacts to the env var CI and sets npm in non-watch mode, otherwise the npm is in watch mode and indeed expects user input which can not be entered in the Jenkins executer.
     // alternatve to set the env var here is to fiddel around with the test.sh and package.json file
-    //environment {
-    //    CI = 'true' 
-    //}
+    environment {
+        CI = 'true' 
+    }
     stages {
         stage('Build') {
             steps {
